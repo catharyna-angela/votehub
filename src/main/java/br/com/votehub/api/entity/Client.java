@@ -1,6 +1,6 @@
 package br.com.votehub.api.entity;
 
-import br.com.votehub.api.domain.Scheme;
+import br.com.votehub.api.entity.scheme.Scheme;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -16,7 +16,7 @@ public class Client {
     private String email;
     @Column(nullable = false)
     private String password;
-    private LocalDateTime date = LocalDateTime.now(); //LocalDateTime é o mais recente para tratar horas e datas.
+    private LocalDateTime date = LocalDateTime.now();
 
 //    private Scheme scheme;
 

@@ -1,6 +1,6 @@
-package br.com.votehub.api.entity;
+package br.com.votehub.api.entity.scheme;
 
-import br.com.votehub.api.domain.Scheme;
+import br.com.votehub.api.entity.scheme.Scheme;
 
 public class Enquete extends Scheme {
     private Long id;

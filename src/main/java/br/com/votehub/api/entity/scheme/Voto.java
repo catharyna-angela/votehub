@@ -10,7 +10,7 @@
 //    private Long id;
 //    private String description; //TODO: definir o tamanho dos caracteres a serem armazenados no banco de dados ou deixar padrão (255).
 //    private LocalDateTime creationDate = LocalDateTime.now();
-//    private LocalDateTime expirationDate = null; //Deveria ser obrigatório ter a data de encerramento, mas pretendo criar códigos privados onde o cliente irá compartilhar.
+//    private LocalDateTime expirationDate = null; //Tornar obrigatório inserir a data de encerramento e/ou deixar que encerre automaticamente quando o cliente compartilhar o código e todos os usuários já tiver votado.
 //    private boolean generateCode = false;
 //    private final Long answersNumber = 0L;
 //
