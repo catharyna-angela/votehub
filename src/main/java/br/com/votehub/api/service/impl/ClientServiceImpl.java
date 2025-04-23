@@ -1,6 +1,8 @@
 package br.com.votehub.api.service.impl;
 
 import br.com.votehub.api.entity.Client;
+import br.com.votehub.api.exceptions.EmailAlreadyExistsException;
+import br.com.votehub.api.exceptions.InvalidPasswordException;
 import br.com.votehub.api.exceptions.ResourceNotFoundException;
 import br.com.votehub.api.repository.ClientRepository;
 import br.com.votehub.api.service.ClientService;
@@ -21,10 +23,10 @@ public class ClientServiceImpl implements ClientService {
         Optional<Client> existingClient = clientRepository.findByEmail(client.getEmail());
 
         if (existingClient.isPresent()) {
-            throw new ResourceNotFoundException("Email de cliente já cadastrado."); //TODO: tratar esse erro no GlobalExceptionHandler, temporariamente como ResourceNotFoundException para teste.
+            throw new EmailAlreadyExistsException("Email de cliente já existe.");
         }
         if (client.getPassword().isBlank()) {
-            throw new ResourceNotFoundException("Insira uma senha válida."); //TODO: ResourceNotFoundException temporariamente, remover.
+            throw new InvalidPasswordException("Insira uma senha válida.");
         }
         return clientRepository.save(client);
     }
